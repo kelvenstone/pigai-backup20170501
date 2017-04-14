@@ -33,7 +33,9 @@ before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destr
   def destroy
   end
 
-  def compostion_params
+  private
+  
+  def composition_params
     params.require(:composition).permit(:grade, :content)
   end
 
