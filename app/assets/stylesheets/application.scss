@@ -12,7 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require trix
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
-*= require trix
+ @import "trix";
