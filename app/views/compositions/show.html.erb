@@ -1,0 +1,20 @@
+<div class="col-md-12">
+
+  <div class="composition">
+    <div class="text-center">
+      <%= link_to("导入作文题", new_composition_path(@composition), :style => "font-size: 30px; text-decoration:underline;") %>
+    </div>
+
+    <% if current_user && current_user == @composition.user %>
+      <%= link_to("Back", compositions_path, class: "btn btn-primary pull-right")%>
+      <%= link_to("Edit", edit_composition_path(@composition), class: "btn btn-primary pull-right")%>
+    <% end %>
+  </div>
+
+  <h2> 作文标题: <%= @composition.com_title %> </h2>
+  <p> 年级：<%= @composition.grade %> </p>
+  <p> 写作要求：<%= @composition.content %> </p>
+
+
+
+</div>
