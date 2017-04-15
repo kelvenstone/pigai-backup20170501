@@ -5,5 +5,9 @@
       <%= f.input :com_title%>
       <%= f.trix_editor :content %>
   </div>
-  <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
 <% end %>

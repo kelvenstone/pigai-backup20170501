@@ -1,4 +1,4 @@
-json.array!(@articles) do |article|
-  json.extract! article, :id, :title, :summary, :content
-  json.url article_url(article, format: :json)
+json.array!(@compositions) do |composition|
+  json.extract! composition, :id, :title, :summary, :content
+  json.url composition_url(composition, format: :json)
 end

@@ -1,5 +1,6 @@
 class CompositionsController < ApplicationController
 before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
+before_action :set_composition, only: [:show, :edit, :update, :destroy]
 
   def index
     @compositions = Composition.all
@@ -13,39 +14,53 @@ before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destr
   def create
     @composition = Composition.new(composition_params)
     @composition.user = current_user
-    if @composition.save
-      redirect_to compositions_path, notice:'one compotion input'
-    else
-      render :new
+
+    respond_to do |format|
+      if @composition.save
+        format.html { redirect_to @composition, notice: 'composition was successfully created.' }
+        format.json { render :show, status: :created, location: @composition }
+      else
+        format.html { render :new }
+        format.json { render json: @composition.errors, status: :unprocessable_entity }
+      end
     end
 
   end
 
   def edit
-    @composition = Composition.find(params[:id])
+
   end
 
   def show
-    @composition = Composition.find(params[:id])
+
   end
 
   def update
-    @composition = Composition.find(params[:id])
-    if @composition.update(composition_params)
-      redirect_to compositions_path, notice:'composition update success'
-    else
-      render :edit
+    respond_to do |format|
+      if @composition.update(composition_params)
+        format.html { redirect_to @composition, notice: 'composition was successfully updated.' }
+        format.json { render :show, status: :ok, location: @composition }
+      else
+        format.html { render :edit }
+        format.json { render json: @composition.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
-    @composition = Composition.find(params[:id])
     @composition.destroy
-      redirect_to compositions_path, alert:'composition delete'
-    
+    respond_to do |format|
+      format.html { redirect_to compositions_url, notice: 'composition was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+
   end
 
   private
+
+  def set_composition
+    @composition = Composition.find(params[:id])
+  end
 
   def composition_params
     params.require(:composition).permit(:grade, :com_title, :content)

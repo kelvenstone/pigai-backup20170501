@@ -1,7 +1,8 @@
 
   <tr>
-    <td> <%= link_to(composition.com_title, composition_path(composition)) %> </td>
     <td> <%= composition.grade %></td>
+    <td> <%= link_to(composition.com_title, composition_path(composition)) %> </td>
+
 
     <td>
       <% if current_user && current_user == composition.user %>
