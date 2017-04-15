@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415013435) do
+ActiveRecord::Schema.define(version: 20170415034254) do
 
   create_table "compositions", force: :cascade do |t|
     t.string   "grade"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20170415013435) do
     t.integer  "user_id"
     t.string   "com_title"
     t.string   "attachment"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string   "image_id"
+    t.string   "image_filename"
+    t.integer  "image_size"
+    t.string   "image_content_type"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "users", force: :cascade do |t|

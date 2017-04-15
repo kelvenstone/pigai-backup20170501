@@ -13,7 +13,7 @@
 
   <h2> 作文标题: <%= @composition.com_title %> </h2>
   <p> 年级：<%= @composition.grade %> </p>
-  <p> 写作要求：<%= @composition.content %> </p>
+  <p> 写作要求： <%=h raw @composition.content %></p>
 
 
 
