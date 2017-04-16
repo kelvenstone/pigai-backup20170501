@@ -2,7 +2,7 @@
 
   <div class="composition">
     <div class="text-center">
-      <%= link_to("导入作文题", new_composition_path(@composition), :style => "font-size: 30px; text-decoration:underline;") %>
+      <%= link_to("输入作文题", new_composition_path(@composition), :style => "font-size: 30px; text-decoration:underline;") %>
     </div>
 
     <% if current_user && current_user == @composition.user %>

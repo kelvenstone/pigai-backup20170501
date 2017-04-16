@@ -16,3 +16,9 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ form.composition {
+   input#grade { width: 50px; }
+   input#com_title { width: 100px; }
+   input#content { width:200px; }
+ }
