@@ -5,6 +5,10 @@ Rails.application.routes.draw do
       resources :writings
   end
 
+  resources :writings do
+      resources :corrections
+  end
+
   namespace :account do
 
    resources :writings
