@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :compositions
   has_many :writings
-
+  has_many :corrections
 
   def admin?
     is_admin
