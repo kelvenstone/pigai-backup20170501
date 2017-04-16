@@ -1,0 +1,2 @@
+module Account::WritingsHelper
+end

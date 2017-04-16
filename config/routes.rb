@@ -5,6 +5,10 @@ Rails.application.routes.draw do
       resources :writings
   end
 
+  namespace :account do
+   resources :writings
+ end
+
   resources :images, only: [:create, :destroy]
   root 'compositions#index'
 end
