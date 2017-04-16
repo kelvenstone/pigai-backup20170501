@@ -57,6 +57,7 @@ layout "side_grade"
 
   end
 
+
   private
 
   def set_composition
@@ -65,6 +66,13 @@ layout "side_grade"
 
   def composition_params
     params.require(:composition).permit(:grade, :com_title, :content)
+  end
+
+  def require_is_admin
+    if !current_user.admin?
+      flash[:alert] = 'You are not admin'
+      redirect_to root_path
+    end
   end
 
 end

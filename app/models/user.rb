@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :writings
 
 
+  def admin?
+    is_admin
+  end
+
 end

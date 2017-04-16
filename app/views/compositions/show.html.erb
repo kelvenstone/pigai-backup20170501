@@ -15,6 +15,8 @@
   <p> 年级：<%= @composition.grade %> </p>
   <p> 写作要求： <%=h raw @composition.content %></p>
 
-
+  <% if current_user && current_user == @composition.user %>
+    <%= link_to("Write", new_composition_writing_path(@composition), class: "btn btn-primary")%>
+  <% end %>
 
 </div>
