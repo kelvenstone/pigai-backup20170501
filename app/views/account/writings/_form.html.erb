@@ -1,0 +1,19 @@
+<div class="composition">
+
+  <h2> 作文标题: <%= @composition.com_title %> </h2>
+  <p> 年级：<%= @composition.grade %> </p>
+  <p> 写作要求： <%=h raw @composition.content %></p>
+
+</div>
+
+
+<%= simple_form_for [:account, @writing] do |f| %>
+  <div class="form-input">
+      <%= f.input :content, :label => "我的作文" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

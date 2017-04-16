@@ -34,6 +34,15 @@ class WritingsController < ApplicationController
     @writing = Writing.find(params[:id])
   end
 
+  def update
+    @writing = Writing.find(params[:id])
+    if @writing.update(writing_params)
+      redirect_to account_writings_path, notice: "Update Success"
+    else
+      render :edit
+    end
+  end
+
   def desroty
     @writing = Writing.find(params[:id])
     @writing.destroy

@@ -1,0 +1,21 @@
+<div class="col-md-12">
+
+<h2 class="text-center">我写的作文</h2>
+
+  <table class= "table table-hover">
+    <thead>
+      <tr>
+        <th> 年级 </th>
+        <th> 作文标题 </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render :partial => "writing_item", :collection => @writings, :as => :writing %>
+
+    </tbody>
+  </table>
+
+
+
+</div>

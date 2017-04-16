@@ -1,0 +1,15 @@
+
+  <tr>
+    <td> <%= writing.composition.grade %></td>
+    <td> <%= link_to(writing.composition.com_title, account_writing_path(writing)) %> </td>
+
+
+    <td>
+      <% if current_user%>
+      <!--      <%= link_to("Edit", edit_account_writing_path(writing),class: "btn btn-sm btn-default") %>
+        <%= link_to("Delete", account_writing_path(writing), class:"btn btn-sm btn-default", method: :delete, data:{confirm:"Are you sure?"}) %> -->
+      <% end %>
+    </td>
+
+
+  </tr>
