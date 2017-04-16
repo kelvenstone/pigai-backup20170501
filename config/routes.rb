@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
+
    resources :writings
  end
 
