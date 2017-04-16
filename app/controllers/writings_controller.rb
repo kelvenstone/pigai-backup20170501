@@ -1,6 +1,10 @@
 class WritingsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
 
+  def index
+    @writings = Writing.all.order("created_at DESC")
+  end
+
   def new
     @composition = Composition.find(params[:composition_id])
     @writing = Writing.new
@@ -24,14 +28,14 @@ class WritingsController < ApplicationController
   end
 
   def show
-    @composition = Composition.find(params[:composition_id])
     @writing = Writing.find(params[:id])
-
+    @composition = @writing.composition
   end
 
+
   def edit
-    @composition = Composition.find(params[:composition_id])
     @writing = Writing.find(params[:id])
+    @composition = @writing.composition
   end
 
   def update
