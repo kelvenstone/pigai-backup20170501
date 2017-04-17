@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   namespace :account do
 
-   resources :writings
+    resources :writings
+    resources :corrections
+
  end
 
   resources :images, only: [:create, :destroy]
