@@ -1,6 +1,6 @@
 class CorrectionsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
-
+  layout "side_grade"
   def new
     @writing = Writing.find(params[:writing_id])
     @composition = @writing.composition

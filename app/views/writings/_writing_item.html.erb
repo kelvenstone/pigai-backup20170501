@@ -1,16 +1,19 @@
 
   <tr>
-    <td> <%= writing.composition.grade %></td>
-    <td> <%= writing.composition.com_title %></td>
-    <td> <%= link_to(writing.user.email, writing_path(writing)) %> </td>
+
+    <!-- 不现实自己写的作文， 因为这些作文不需要自己批改   -->
+    <% if current_user != writing.user %>
+      <td> <%= writing.composition.grade %></td>
+      <td> <%= writing.composition.com_title %></td>
+      <td> <%= link_to(writing.user.email, writing_path(writing)) %> </td>
 
 
-    <td>
-      <% if current_user%>
-      <!--      <%= link_to("Edit", edit_account_writing_path(writing),class: "btn btn-sm btn-default") %>
+      <td>
+        <% if current_user%>
+        <!--      <%= link_to("Edit", edit_account_writing_path(writing),class: "btn btn-sm btn-default") %>
         <%= link_to("Delete", account_writing_path(writing), class:"btn btn-sm btn-default", method: :delete, data:{confirm:"Are you sure?"}) %> -->
-      <% end %>
-    </td>
-
+        <% end %>
+      </td>
+    <% end %>
 
   </tr>
