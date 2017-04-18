@@ -1,6 +1,6 @@
 class Account::WritingsController < ApplicationController
-before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
-layout "side_grade"
+  before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
+  layout "side_grade"
   def index
     @writings = current_user.writings.order("created_at DESC")
   end

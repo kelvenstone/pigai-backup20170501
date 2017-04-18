@@ -1,0 +1,14 @@
+<%= simple_form_for @composition do |f| %>
+  <div class="form-input">
+
+
+      <%= f.input :grade, :label => "年级", priority: [ "7年级" ], collection: [ "日记","7年级", "8年级", "中考","高考","四级","六级","专四","专八","雅思","托福","考研"] %>
+      <%= f.input :com_title,:label => "作文标题" %>
+      <%= f.trix_editor :content, :label => "写作要求" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

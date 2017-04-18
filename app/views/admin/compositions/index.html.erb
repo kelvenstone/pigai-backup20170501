@@ -1,0 +1,28 @@
+<div class="col-md-12">
+
+<h2 class="text-center">所有的作文题</h2>
+
+  <% if current_user %>
+    <% if current_user.admin? %>
+          <%= link_to("输入作文题", new_composition_path(@composition),class: "btn btn-default pull-right") %>
+    <% end %>
+  <% end %>
+
+
+  <table class= "table table-hover">
+    <thead>
+      <tr>
+        <th> 年级 </th>
+        <th> 作文标题 </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render :partial => "com_item", :collection => @compositions, :as => :composition %>
+
+    </tbody>
+  </table>
+
+
+
+</div>
