@@ -1,9 +1,10 @@
 class WritingsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
   layout "side_grade"
+  @@flag_writing_used=0
+  
   def index
     @writings = Writing.all.order("created_at DESC")
-
   end
 
   def new
