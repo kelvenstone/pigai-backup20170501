@@ -4,8 +4,7 @@
       <td> <%= writing.composition.grade %></td>
       <td> <%= writing.composition.com_title %></td>
       <td> <%= link_to(writing.user.email, admin_writing_path(writing)) %> </td>
-      <td> <%= writing.corrections.count %> </td>
-
+      <td> <%= link_to(writing.corrections.count,writing_corrections_path(writing)) %></td>
     <td>
       <% if current_user%>
       <!--      <%= link_to("Edit", edit_admin_writing_path(writing),class: "btn btn-sm btn-default") %>

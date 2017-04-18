@@ -3,6 +3,7 @@ class Account::WritingsController < ApplicationController
   layout "side_grade"
   def index
     @writings = current_user.writings.order("created_at DESC")
+  
   end
 
   def show
@@ -22,13 +23,19 @@ class Account::WritingsController < ApplicationController
     else
       render :edit
     end
+
   end
 
   def destroy
+
     @writing = Writing.find(params[:id])
-    @writing.destroy
-    flash[:alert]="writing deleted"
-    redirect_to account_writings_path
+    if @writing.corrections.count == 0
+      @writing.destroy
+      flash[:alert]="writing deleted"
+      redirect_to account_writings_path
+    else
+      redirect_to account_writings_path, alert: "Can not delete. Please delete the corrections of the writing first."
+    end
   end
 
 

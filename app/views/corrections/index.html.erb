@@ -1,0 +1,8 @@
+<h2> <%= @writing.user.email %>的作文  - 被批阅列表 </h2>
+  <p>  作文标题：<%= @writing.composition.com_title %> </p>
+  <div class="trix-content">
+    <p> 作文要求： <%=h raw @writing.composition.content %></p>
+  </div>
+  <p>   <%= link_to("返回", account_writings_path, class: "btn btn-primary")%></p>
+<hr>
+<%= render :partial => "correction", :collection => @corrections, :as => :correction %>

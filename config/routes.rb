@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :compositions
-    resources :writings
+    resources :writings 
     resources :corrections
 
   end
