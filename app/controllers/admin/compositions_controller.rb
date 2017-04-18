@@ -36,6 +36,7 @@ class Admin::CompositionsController < ApplicationController
   end
 
   def update
+
     respond_to do |format|
       if @composition.update(composition_params)
         format.html { redirect_to admin_composition_path(@composition), notice: 'admin composition was successfully updated.' }
@@ -48,12 +49,18 @@ class Admin::CompositionsController < ApplicationController
   end
 
   def destroy
-    @composition.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_compositions_path, notice: 'composition was successfully destroyed.' }
-      format.json { head :no_content }
+    if @composition.writings.count == 0
+      @composition.destroy
+      respond_to do |format|
+        format.html { redirect_to admin_compositions_path, notice: 'composition admin was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to admin_compositions_path, alert: 'Can not deleted.Please delete the writings first.' }
+        format.json { head :no_content }
+      end
     end
-
   end
 
 
@@ -66,5 +73,6 @@ class Admin::CompositionsController < ApplicationController
   def composition_params
     params.require(:composition).permit(:grade, :com_title, :content)
   end
+
 
 end

@@ -18,7 +18,7 @@ layout "side_grade"
 
     respond_to do |format|
       if @composition.save
-        format.html { redirect_to @composition, notice: 'composition was successfully created.' }
+        format.html { redirect_to composition_path(@composition), notice: 'composition index was successfully created.' }
         format.json { render :show, status: :created, location: @composition }
       else
         format.html { render :new }
@@ -39,7 +39,7 @@ layout "side_grade"
   def update
     respond_to do |format|
       if @composition.update(composition_params)
-        format.html { redirect_to @composition, notice: 'composition was successfully updated.' }
+        format.html { redirect_to composition_path(@composition), notice: 'composition index was successfully updated.' }
         format.json { render :show, status: :ok, location: @composition }
       else
         format.html { render :edit }
@@ -49,12 +49,18 @@ layout "side_grade"
   end
 
   def destroy
-    @composition.destroy
-    respond_to do |format|
-      format.html { redirect_to compositions_url, notice: 'composition was successfully destroyed.' }
-      format.json { head :no_content }
+    if @composition.writings.count == 0
+      @composition.destroy
+      respond_to do |format|
+        format.html { redirect_to compositions_path, notice: 'composition index was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to compositions_path, alert: 'Can not deleted.Please delete the writings first.' }
+        format.json { head :no_content }
+      end
     end
-
   end
 
 

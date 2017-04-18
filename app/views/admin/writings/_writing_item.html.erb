@@ -1,12 +1,9 @@
 
   <tr>
-    <% if writing.composition %>
+
       <td> <%= writing.composition.grade %></td>
       <td> <%= writing.composition.com_title %></td>
-      <td> <%= link_to("点击进入", account_writing_path(writing)) %> </td>
-    <% else %>
-
-    <% end %>
+      <td> <%= link_to(writing.user.email, admin_writing_path(writing)) %> </td>
 
     <td>
       <% if current_user%>
