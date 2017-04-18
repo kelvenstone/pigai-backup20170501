@@ -3,7 +3,7 @@ class Admin::WritingsController < ApplicationController
 
   def index
     @writings = Writing.all.order("created_at DESC")
-    
+
   end
 
   def show
@@ -13,10 +13,16 @@ class Admin::WritingsController < ApplicationController
 
 
   def destroy
+
     @writing = Writing.find(params[:id])
-    @writing.destroy
-    flash[:alert]="writing deleted"
-    redirect_to account_writings_path
+    if @writing.corrections.count == 0
+      @writing.destroy
+      flash[:alert]="admin writing deleted"
+      redirect_to admin_writings_path
+    else
+      flash[:alert]="Can not delete. Please delete the corrections of the writing."
+      redirect_to admin_writings_path
+    end
   end
 
 

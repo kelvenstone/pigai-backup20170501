@@ -1,0 +1,8 @@
+
+  <tr>
+    <td> <%= correction.writing.composition.grade %></td>
+    <td> <%= correction.writing.composition.com_title %> </td>
+    <td> <%= correction.writing.user.email %> </td>
+    <td> <%= link_to(correction.user.email, admin_correction_path(correction)) %> </td>
+
+  </tr>
