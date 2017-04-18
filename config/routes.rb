@@ -10,11 +10,18 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-
+    resources :compositions
     resources :writings
     resources :corrections
 
- end
+  end
+
+  namespace :admin do
+   resources :compositions
+
+
+  end
+
 
   resources :images, only: [:create, :destroy]
   root 'compositions#index'
