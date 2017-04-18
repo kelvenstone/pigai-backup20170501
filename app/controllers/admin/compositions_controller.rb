@@ -17,8 +17,8 @@ class Admin::CompositionsController < ApplicationController
 
     respond_to do |format|
       if @composition.save
-        format.html { redirect_to @composition, notice: 'composition was successfully created.' }
-        format.json { render :show, status: :created, location: @composition }
+        format.html { redirect_to admin_composition_path(@composition), notice: 'my composition  was successfully created.' }
+        format.json { render admin: :show, status: :created, :location=>admin/@composition }
       else
         format.html { render :new }
         format.json { render json: @composition.errors, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class Admin::CompositionsController < ApplicationController
   def update
     respond_to do |format|
       if @composition.update(composition_params)
-        format.html { redirect_to @composition, notice: 'composition was successfully updated.' }
+        format.html { redirect_to admin_composition_path(@composition), notice: 'admin composition was successfully updated.' }
         format.json { render :show, status: :ok, location: @composition }
       else
         format.html { render :edit }
@@ -50,7 +50,7 @@ class Admin::CompositionsController < ApplicationController
   def destroy
     @composition.destroy
     respond_to do |format|
-      format.html { redirect_to compositions_url, notice: 'composition was successfully destroyed.' }
+      format.html { redirect_to admin_compositions_path, notice: 'composition was successfully destroyed.' }
       format.json { head :no_content }
     end
 

@@ -4,7 +4,7 @@
 
   <% if current_user %>
     <% if current_user.admin? %>
-          <%= link_to("输入作文题", new_composition_path(@composition),class: "btn btn-default pull-right") %>
+          <%= link_to("输入作文题", new_admin_composition_path(@composition),class: "btn btn-default pull-right") %>
     <% end %>
   <% end %>
 
