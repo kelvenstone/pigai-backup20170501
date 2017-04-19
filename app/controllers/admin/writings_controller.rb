@@ -21,7 +21,7 @@ class Admin::WritingsController < ApplicationController
       redirect_to admin_writings_path
     else
       flash[:alert]="Can not delete. Please delete the corrections of the writing."
-      redirect_to admin_writings_path
+      redirect_to admin_writing_path(@writing)
     end
   end
 
