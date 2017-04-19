@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   namespace :wrpigai do
-   resources :compositions
+   resources :compositions, :writings
 
   end
 

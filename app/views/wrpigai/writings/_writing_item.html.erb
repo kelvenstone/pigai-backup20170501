@@ -1,0 +1,23 @@
+
+  <tr>
+
+    <!-- 不显示自己写的作文， 因为这些作文不需要自己批改   -->
+    <% if current_user != writing.user %>
+      <% corrections = writing.corrections %>
+      <% @@flag_writing_used = 0 %>
+  <!-- 不显示已经被自己批改过的文章， 因为这些作文不需要自己批改   -->
+      <% corrections.each do |correction| %>
+        <% if correction.user == current_user %>
+          <% @@flag_writing_used = 1 %>
+          <% break %>
+        <% end %>
+      <% end %>
+      <% if @@flag_writing_used == 0 %>
+        <td> <%= writing.composition.grade %></td>
+        <td> <%= writing.composition.com_title %></td>
+        <td> <%= link_to(writing.user.email, writing_path(writing)) %> </td>
+      <% end %>
+
+    <% end %>
+
+  </tr>
