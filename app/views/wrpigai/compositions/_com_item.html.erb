@@ -11,7 +11,6 @@
   <% if @@flag_composition_used == 0 %>
     <td> <%= composition.grade %></td>
     <td> <%= link_to(composition.com_title, composition_path(composition)) %> </td>
-    <td> <%= link_to(composition.writings.count,composition_writings_path(composition)) %> </td>
   <% end %>
 
 

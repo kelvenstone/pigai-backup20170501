@@ -2,7 +2,7 @@
   <tr>
     <td> <%= composition.grade %></td>
     <td> <%= link_to(composition.com_title, admin_composition_path(composition)) %> </td>
-    <td> <%= composition.writings.count %> </td>
+    <td> <%= link_to(composition.writings.count,composition_writings_path(composition)) %> </td>
 
 
     <td>

@@ -1,9 +1,10 @@
 class Account::WritingsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
   layout "side_grade"
+
   def index
     @writings = current_user.writings.order("created_at DESC")
-  
+
   end
 
   def show
@@ -38,6 +39,10 @@ class Account::WritingsController < ApplicationController
     end
   end
 
+  def woyaopigai
+    @writings = Writing.all.order("created_at DESC")
+    redirect_to :back 
+  end
 
   private
     def writing_params

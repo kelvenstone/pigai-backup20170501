@@ -1,0 +1,2 @@
+module Wrpigai::CompositionsHelper
+end

@@ -2,9 +2,18 @@ class WritingsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
   layout "side_grade"
   @@flag_writing_used=0
-  
+
   def index
-    @writings = Writing.all.order("created_at DESC")
+    #登录状态下(管理员或者用户)显示：某一篇作文题木下的所有作文；  非登录状态下显示全部作文。
+    if params[:composition_id]
+      @composition= Composition.find(params[:composition_id])
+      @writings = @composition.writings.order("created_at DESC")
+    else
+      @writings = Writing.all.order("created_at DESC")
+    end
+
+
+
   end
 
   def new
