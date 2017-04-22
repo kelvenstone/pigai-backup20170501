@@ -3,7 +3,7 @@
   <div class="trix-content">
     <p> 作文要求： <%=h raw @writing.composition.content %></p>
   </div>
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
     <p> <%= link_to("返回", admin_writings_path, class: "btn btn-primary")%></p>
   <% elsif current_user %>
     <p> <%= link_to("返回", account_writings_path, class: "btn btn-primary")%></p>

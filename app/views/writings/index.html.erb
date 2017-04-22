@@ -1,6 +1,6 @@
 <div class="col-md-12">
 
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
     <h2 class="text-center"> <%= @composition.com_title %>题目的所有作文</h2>
     <%= link_to("输入作文题", new_composition_path(@composition),class: "btn btn-default pull-right") %>
     <%= link_to("返回", admin_compositions_path,class: "btn btn-default pull-right") %>
