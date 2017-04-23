@@ -10,7 +10,7 @@
   批别人的作文，成就自己！
   </p>
   <p class="lead">
-    <% if current_user && !current_suer.admin? %>
+    <% if current_user && !current_user.admin? %>
       <a class="active"> <%= link_to("我来批改", wrpigai_writings_path, class:"btn btn-lg btn-danger" ) %> </a>
     <% else %>
       <a class="active"> <%= link_to("我来批改", new_user_session_path, class:"btn btn-lg btn-danger" ) %> </a>
