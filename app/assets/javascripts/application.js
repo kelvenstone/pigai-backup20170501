@@ -16,4 +16,5 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require trix
+//= require bootstrap/modal
 //= require_tree .
