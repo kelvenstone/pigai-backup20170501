@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>52PiGai </title>
+        <title>51Pi </title>
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,9 @@
     <body>
 
         <div class="container-fluid">
-            <%= render "common/navbar" %>
+           <div class="row">
+             <%= render "common/navbar" %>
+           </div>
             <%= render "common/flashes" %>
             <%= yield %>
         </div>

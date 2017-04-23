@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   end
 
   resources :images, only: [:create, :destroy]
-  root 'compositions#index'
+  root 'welcome#index'
+
 end

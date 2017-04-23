@@ -1,7 +1,7 @@
 class CompositionsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
   before_action :set_composition, only: [:show, :edit, :update, :destroy]
-  layout "side_grade"
+
   @@flag_composition_used = 1
 
   def index
