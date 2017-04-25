@@ -1,12 +1,20 @@
-<h2> <%= @writing.user.email %>的作文  - 被批阅列表 </h2>
-  <p>  作文标题：<%= @writing.composition.com_title %> </p>
-  <div class="trix-content">
-    <p> 作文要求： <%=h raw @writing.composition.content %></p>
+<div class="col-md-10">
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <h2> <%= @writing.user.email %>的作文  - 被批阅列表 </h2>
+    </div>
+    <p>  作文标题：<%= @writing.composition.com_title %> </p>
+    <div class="trix-content">
+      <p> 作文要求： <%=h raw @writing.composition.content %></p>
+    </div>
+    <% if current_user && current_user.admin? %>
+      <p> <%= link_to("返回", admin_writings_path, class: "btn btn-primary")%></p>
+    <% elsif current_user %>
+      <p> <%= link_to("返回", account_writings_path, class: "btn btn-primary")%></p>
+    <% end %>
   </div>
-  <% if current_user && current_user.admin? %>
-    <p> <%= link_to("返回", admin_writings_path, class: "btn btn-primary")%></p>
-  <% elsif current_user %>
-    <p> <%= link_to("返回", account_writings_path, class: "btn btn-primary")%></p>
-  <% end %>
-<hr>
-<%= render :partial => "correction", :collection => @corrections, :as => :correction %>
+
+  <hr>
+  <%= render :partial => "correction", :collection => @corrections, :as => :correction %>
+</div>

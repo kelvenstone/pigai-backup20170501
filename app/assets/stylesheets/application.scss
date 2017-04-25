@@ -143,7 +143,7 @@
   color: white;
 }
 
-//按钮字体颜色设置
+//首页大图上jumbotron里面 按钮字体颜色设置
 
 .btn-danger {
    color: #fff;//字体颜色
@@ -170,7 +170,7 @@
 }
 
 
-/******弹窗 LOGIN MODAL ******/
+/******弹窗 LOGIN MODAL 弹窗在本案例中未使用******/
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;
@@ -267,7 +267,7 @@
 
 
 /*
-登录和注册
+登录和注册 单独页面
 */
 .devise-view img {
   background-image:url("login.jpg");
@@ -382,4 +382,15 @@ form {
   .navbar {
     border-radius: 0; //圆角为0
   }
+}
+
+/******common常用*****/
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.col-left{
+  float: none;
+  margin: 0 auto;
 }

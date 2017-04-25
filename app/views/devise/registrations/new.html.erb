@@ -35,35 +35,39 @@
           <p>你批改的都是原汁原味，学生写的作文</p>
         </div>
       </div>
-    <div class="right">
-      <div class="input-block ">
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),html: { class: 'form-horizontal' },:wrapper => :horizontal_form,:wrapper_mappings => {    check_boxes: :horizontal_radio_and_checkboxes,    radio_buttons: :horizontal_radio_and_checkboxes,    boolean: :horizontal_boolean }) do |f| %>
+      <div class="right">
+
+        <div class="row ">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
+          html: { class: 'form-horizontal' },
+          :wrapper => :horizontal_form,
+          :wrapper_mappings => {
+          check_boxes: :horizontal_radio_and_checkboxes,
+          radio_buttons: :horizontal_radio_and_checkboxes,
+          date: :multi_select,
+          boolean: :horizontal_boolean })do |f| %>
+
           <%= f.error_notification %>
 
-          <div class="form-inputs">
-            <%= f.input :email, required: true, autofocus: true, label: "电子邮箱", placeholder: "请输入电子邮箱", type: "email", value: "", name: "user[email]", id: "user_email", input_html: { class: "string email required form-control" } %>
-            <%= f.input :password, required: true, label: "密码", placeholder: "密码至少6位", type: "password", name: "user[password]", id: "user_password", input_html: { class: "form-group password required user_password"} %>
-            <%= f.input :password_confirmation, required: true, label: "密码确认", placeholder: "再输入一遍确认密码", type: "password", name: "user[password_confirmation]", id: "user_password_confirmation", input_html: { class: "form-group password required user_password_confirmation"} %>
-            <%= f.input :name, required: true, label: "您的姓名", placeholder: "请填写真实姓名。" %>
-            <div class="radio">
-              性别：
-              <label><input type="radio" name="optradio" value= "true" >男</label>
-              <label><input type="radio" name="optradio value= "false" >女</label>
-            </div>
+            <%= f.input :email, required: true, autofocus: true, label: "邮箱", placeholder: "请输入电子邮箱", type: "email" %>
+            <%= f.input :password, required: true, label: "密码", placeholder: "密码至少6位", type: "password"%>
+            <%= f.input :password_confirmation, required: true, label: "确认", placeholder: "再输入一遍确认密码", type: "password" %>
+            <%= f.input :name, required: true, label: "姓名", placeholder: "请填写真实姓名。" %>
+            <%= f.input :date_of_birth, as: :date, html5: true%>
+            <%= f.input :is_female, as: :radio_buttons,collection: ["男", "女"],label: "性别" %>
 
             <%= f.input :school, required: true, label: "您所在的学校", placeholder: "＊＊省＊＊市＊＊地区＊＊＊学校" %>
             <%= f.input :qq_number, required: true, label: "您的qq号", placeholder: "请输入您的QQ号码" %>
             <%= f.input :phone_number, label: "您的手机号码", placeholder: "重要！请填写你的有效手机号码" %>
 
-          </div>
 
-          <div class="form-actions">
             <%= f.button :submit, :label => "注 册", type: "submit", name: "commit", value: "注 册", input_html: {  class: "btn btn-default btn btn-devise btn-block"}%>
-          </div>
 
-        <% end %>
-        <br />
-        已经有账号？  <a href="/users/sign_in">登录</a>
-        <br />
-
-        
+          <% end %>
+          <br />
+          已经有账号？  <a href="/users/sign_in">登录</a>
+          <br />
+        </div>
+    </div>
+  </div>
+</div>
