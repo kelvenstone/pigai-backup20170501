@@ -38,31 +38,19 @@
       <div class="right">
 
         <div class="row ">
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
-          html: { class: 'form-horizontal' },
-          :wrapper => :horizontal_form,
-          :wrapper_mappings => {
-          check_boxes: :horizontal_radio_and_checkboxes,
-          radio_buttons: :horizontal_radio_and_checkboxes,
-          date: :multi_select,
-          boolean: :horizontal_boolean })do |f| %>
-
-          <%= f.error_notification %>
-
-            <%= f.input :email, required: true, autofocus: true, label: "邮箱", placeholder: "请输入电子邮箱", type: "email" %>
-            <%= f.input :password, required: true, label: "密码", placeholder: "密码至少6位", type: "password"%>
-            <%= f.input :password_confirmation, required: true, label: "确认", placeholder: "再输入一遍确认密码", type: "password" %>
-            <%= f.input :name, required: true, label: "姓名", placeholder: "请填写真实姓名。" %>
-            <%= f.input :date_of_birth, as: :date, html5: true%>
-            <%= f.input :is_female, as: :radio_buttons,collection: ["男", "女"],label: "性别" %>
-
-            <%= f.input :school, required: true, label: "您所在的学校", placeholder: "＊＊省＊＊市＊＊地区＊＊＊学校" %>
-            <%= f.input :qq_number, required: true, label: "您的qq号", placeholder: "请输入您的QQ号码" %>
-            <%= f.input :phone_number, label: "您的手机号码", placeholder: "重要！请填写你的有效手机号码" %>
-
-
-            <%= f.button :submit, :label => "注 册", type: "submit", name: "commit", value: "注 册", input_html: {  class: "btn btn-default btn btn-devise btn-block"}%>
-
+          <h3> 注册 </h3>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name))do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :email, required: true, label: false, autofocus: true, placeholder: "请输入电子邮箱",type: "email" %>
+            <%= f.input :password, required: true, label: false, placeholder: "密码至少6位", type: "password",:input_html => {:minlength => 6 , maxlength: 10} %>
+            <%= f.input :password_confirmation, label: false, required: true, placeholder: "再输入一遍确认密码", type: "password",:input_html => {:minlength => 6 , maxlength: 10} %>
+            <%= f.input :name, required: true, label: false,  placeholder: "请填写真实姓名。" %>
+            <%= f.input :date_of_birth, as: :date, label: false, html5: true %>
+            <%= f.input :is_female, as: :radio_buttons,collection: ["男", "女"],label: false %>
+            <%= f.input :school, required: true, label: false,  placeholder: "＊＊省＊＊市＊＊地区＊＊＊学校" %>
+            <%= f.input :qq_number,required: true, label: false,  placeholder: "请输入您的QQ号码",:input_html => { :minlength => 5 , maxlength: 10 } %>
+            <%= f.input :phone_number, label: false,  placeholder: "重要！请填写你的有效手机号码",:input_html => { :type => "tel" } %>
+            <%= f.button :submit, :label => "注 册", type: "submit", name: "commit", value: "注 册", class: "btn btn-success" %>
           <% end %>
           <br />
           已经有账号？  <a href="/users/sign_in">登录</a>
