@@ -41,7 +41,6 @@
  //logo字体颜色
   .navbar-default .navbar-brand {
     color: #EF6C00; //字体颜色
-
     padding: 10px 15px; //上下10px，左右15px
     line-height: 30px; //文字行高
   }
@@ -49,7 +48,6 @@
   .navbar-default .navbar-brand:hover,
   .navbar-default .navbar-brand:focus {
     color: #FFEB3B; //鼠标放置在链接上的文字颜色
-
     background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
   }
 
@@ -57,20 +55,18 @@
 
  .navbar-default .navbar-nav > li > a{
    color: #EF6C00;
-
  }
 
  .navbar-default .navbar-nav > li > a:hover,
  .navbar-default .navbar-nav > li > a:focus {
    color: #FFEB3B;
-
    background-color: transparent;
  }
+
  .navbar-default .navbar-nav > .active > a,
  .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .active > a:focus {
    color: #FF6F00;
-
    background-color: #FFE0B2;
 
  }
@@ -79,9 +75,7 @@
  .navbar-default .navbar-nav > .open > a:focus,
  .navbar-default .navbar-nav > .open > a:hover {
    background-color: #FFE0B2;
-
    color: #212121;
-
  }
 
 //首页大图格式设置
@@ -89,7 +83,7 @@
   background-image:url("header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 110px;
+  padding-bottom: 100px;
 }
     //大图撑满全屏
  .container-fluid .jumbotron{
@@ -110,7 +104,6 @@
  .jumbotron h1, .jumbotron .h1 {
      text-align: left;//文字左对齐
      color: #222;  //字体颜色
-
      padding: 50px 20px 0;//上50px，左右20px，下0
  }
 
@@ -145,18 +138,13 @@
 
 .btn-danger {
    color: #fff;//字体颜色
-
    background-color: #EF6C00;//背景颜色
-
    border-color: #EF6C00;//边框颜色
-
 }
 
 .btn-danger:hover {
    background-color: #E65100;//鼠标放置在btn上的背景颜色
-
    border-color: #E65100;//鼠标放置在btn上的边框颜色
-
 }
 
 .btn-lg, .btn-group-lg > .btn {
@@ -166,7 +154,6 @@
    border-radius: 3px;//btn圆角
    width: 200px;//这里用指定宽度把btn拉得更长
 }
-
 
 /******弹窗 LOGIN MODAL 弹窗在本案例中未使用******/
 .loginmodal-container {
@@ -401,44 +388,33 @@ form {
 
 /******登录后正文背景图，未使用*****/
 /****** 使用时：pigai123改成pigai *****/
-.pigai123 {
-  background-image:url("login.jpg");
-  background-color: #323232;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.pigai {
+  // background-image:url("login.jpg");
+  background-color: #F5F5F5;
+  background-size: cover;
+  background-repeat: repeat-y;
+  // position: relative;
+  // top: 50px;
   margin: auto;
+  padding-bottom: 0px;
   min-width: 100%;
   min-height: 100%;
-  z-index: -5;
+  z-index: -1;
 }
 
 /* Footer */
 
-footer{
-   background-color: #212121;
-   border-color: #212121; //边框色
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    height: 35px;
-    text-align: center;
-    color: #CCC;
-    padding: 0px;
-    margin: 0px -30px;
-
-}
-
-@media (min-width: 768px) {
-  .footer {
-    border-radius: 0; //圆角为0
-  }
-}
-
-footer p {
-    padding: 10.5px;
-    margin: 0px;
-    line-height: 100%;
-}
+// footer{
+//     background-color: #212121;
+//     position: relative;
+//     bottom: 0;
+//     height: 35px;
+//     text-align: center;
+//     color: #CCC;
+// }
+//
+// footer p {
+//     padding: 10.5px;
+//     margin: 0px;
+//     line-height: 100%;
+// }
