@@ -27,6 +27,6 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: blog_production
+  database: pigai_production
   username: postgres
   password: postgres
