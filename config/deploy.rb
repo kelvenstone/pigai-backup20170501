@@ -1,14 +1,14 @@
 # config valid only for current version of Capistrano
 lock "3.8.1"
 
-set :application, "lichenglish"
-set :repo_url, "git@github.com:kelvenstone/lichenglish.git"
+set :application, "pigai"
+set :repo_url, "git@github.com:kelvenstone/pigai.git"
 
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 # Default deploy_to directory is /var/www/my_app_name
- set :deploy_to, '/home/apps/lichenglish'
+ set :deploy_to, '/home/apps/pigai'
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 # You can configure the Airbrussh format using :format_options.
@@ -18,7 +18,7 @@ set :repo_url, "git@github.com:kelvenstone/lichenglish.git"
 # set :pty, true
 # Default value for :linked_files is []
 # append :linked_files, 'config/database.yml', 'config/secrets.y ml'
-set :linked_files, fetch(:linked_files, []).push('config/databas e.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 # Default value for linked_dirs is []
 # append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sock ets', 'public/system'
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids ', 'tmp/cache', 'tmp/sockets', 'vendor/bundle')
