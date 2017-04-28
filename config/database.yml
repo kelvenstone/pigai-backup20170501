@@ -29,4 +29,4 @@ production:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: pigai_production
   username: postgres
-  password: postgres
+  password: 6185789
