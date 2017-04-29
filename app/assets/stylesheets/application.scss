@@ -25,6 +25,18 @@
  }
 
 
+html {
+   position: relative;
+   min-height: 100%;
+ }
+
+ body {
+   /* Margin bottom by footer height */
+   margin-bottom: 100px;
+ }
+
+
+//---------Navbar---------
   .navbar-default {
       background-color: #212121;  //背景颜色
       border-color: #212121; //边框色
@@ -418,3 +430,17 @@ form {
 //     margin: 0px;
 //     line-height: 100%;
 // }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #212121;
+
+  p {
+    color: white;
+    margin-top: 30px;
+  }
+}

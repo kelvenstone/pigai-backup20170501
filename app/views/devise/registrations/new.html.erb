@@ -46,7 +46,7 @@
             <%= f.input :password_confirmation, label: false, required: true, placeholder: "再输入一遍确认密码", type: "password",:input_html => {:minlength => 6 , maxlength: 10} %>
             <%= f.input :name, required: true, label: false,  placeholder: "请填写真实姓名。" %>
             <%= f.input :date_of_birth, as: :date, label: false, html5: true %>
-            <%= f.input :is_female, as: :radio_buttons,collection: ["男", "女"],label: false %>
+            <%= f.input :is_female, as: :radio_buttons,collection: [['男',false],['女',true]],label: false %>
             <%= f.input :school, required: true, label: false,  placeholder: "＊＊省＊＊市＊＊地区＊＊＊学校" %>
             <%= f.input :qq_number,required: true, label: false,  placeholder: "请输入您的QQ号码",:input_html => { :minlength => 5 , maxlength: 10 } %>
             <%= f.input :phone_number, label: false,  placeholder: "重要！请填写你的有效手机号码",:input_html => { :type => "tel" } %>
