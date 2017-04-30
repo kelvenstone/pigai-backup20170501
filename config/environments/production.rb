@@ -27,7 +27,7 @@ Rails.application.configure do
 
   # add follow two rows in April.28
   config.assets.compile = true
-  # config.assets.precompile =  ['*.js', '*.css', '*.css.erb']
+  config.assets.precompile =  ['*.js', '*.css', '*.css.erb']
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
