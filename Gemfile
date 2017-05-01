@@ -45,6 +45,7 @@ gem "refile-mini_magick"
 gem "refile-s3", '~> 0.2.0'
 gem 'jquery-fileupload-rails'
 gem 'annotate'
+gem 'strong_parameters'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
