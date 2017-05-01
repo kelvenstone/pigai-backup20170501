@@ -1,0 +1,2 @@
+module Users::EditUserHelper
+end

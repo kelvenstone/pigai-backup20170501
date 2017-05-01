@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     resources :compositions, :writings, :corrections
   end
 
+  namespace :account do
+    resources :users
+  end
+
   namespace :admin do
     resources :compositions, :writings, :corrections
   end
