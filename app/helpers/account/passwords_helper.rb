@@ -1,2 +1,0 @@
-module Account::PasswordsHelper
-end
