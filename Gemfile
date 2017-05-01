@@ -43,8 +43,8 @@ gem 'trix'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem "refile-s3", '~> 0.2.0'
-gem "jquery-fileupload-rails"
-gem "annotate"
+gem 'jquery-fileupload-rails'
+gem 'annotate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
