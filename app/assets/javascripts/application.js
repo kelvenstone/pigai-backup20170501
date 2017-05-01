@@ -17,8 +17,11 @@
 //= require bootstrap/dropdown
 //= require trix
 //= require bootstrap/modal
-//= require_tree .
+//= require jquery
+//= require jquery_ujs
 //= require jquery-fileupload
+//= require_tree .
+
 
 
 

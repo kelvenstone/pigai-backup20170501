@@ -9,7 +9,8 @@
 
 <%= simple_form_for [@composition, @writing] do |f| %>
   <div class="form-input">
-      <%= f.input :content, :label => "我的作文" %>
+      <!-- <%= f.input :content, :label => "我的作文" %> -->
+      <%= f.trix_editor :content, :label => "我的作文" %>
   </div>
 
   <div class="form-actions">
